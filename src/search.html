@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../dist/index.js" type="module"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inputElement" />
+    <div id="suggestionContainer" class="suggestionContainer"></div>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      input {
+        width: 15rem;
+        height: 2rem;
+        border-radius: 1rem;
+      }
+
+      .suggestionContainer {
+        width: 15rem;
+        background-color: lightgray;
+        border-radius: 1rem;
+      }
+
+      .suggestionContainer div {
+        padding: 0.5rem;
+        padding-left: 1rem;
+        border-radius: 1rem;
+      }
+
+      .suggestionContainer div:hover{
+        background-color: gray;
+      }
+    </style>
+  </body>
+</html>
