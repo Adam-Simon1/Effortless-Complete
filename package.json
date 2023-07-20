@@ -1,6 +1,6 @@
 {
-  "name": "autocomplete-js",
-  "version": "1.0.0",
+  "name": "effortless-complete",
+  "version": "1.0.1",
   "description": "Input autocompletion made simple",
   "main": "index.js",
   "type": "module",
@@ -14,10 +14,16 @@
   },
   "keywords": [
     "Input",
-    "Autocompletion"
+    "Autocompletion",
+    "AutoComplete",
+    "Simple",
+    "Effortless"
+  ],
+  "files": [
+    "dist"
   ],
   "author": "Adam Simon",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Adam-Simon1/AutoComplete-JS/issues"
   },
