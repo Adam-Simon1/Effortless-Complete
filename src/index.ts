@@ -4,12 +4,11 @@ interface Options1 {
   suggestionContainer: HTMLDivElement;
   data: string[];
   inputElement: HTMLInputElement;
-  clickAction?: () => void;
+  clickAction?: (selectedSuggestion: string) => void;
   filtering: string;
-  selectedSuggestionsVar: string;
 }
 
-export function autoComplete(options: Options1): HTMLElement {
+export function autoComplete(options: Options1): HTMLDivElement {
   const array = options.data;
   const inputElement = options.inputElement;
   const clickAction = options.clickAction;
@@ -44,9 +43,8 @@ export function autoComplete(options: Options1): HTMLElement {
       suggestionDiv.textContent = suggestion;
 
       suggestionDiv.addEventListener("click", () => {
-        options.selectedSuggestionsVar = suggestion;
         if (options.clickAction) {
-          clickAction();
+          clickAction(suggestion);
         }
       });
 
@@ -70,10 +68,9 @@ interface links {
 interface Options2 {
   data: links[];
   inputElement: HTMLInputElement;
-  clickAction?: () => void;
+  clickAction?: (selectedSuggestion: string) => void;
   filtering: string;
   suggestionContainer: HTMLDivElement;
-  selectedSuggestionsVar: string;
 }
 
 export function autoCompleteHref(options: Options2): HTMLElement {
@@ -117,9 +114,8 @@ export function autoCompleteHref(options: Options2): HTMLElement {
       count++;
 
       suggestionDiv.addEventListener("click", () => {
-        options.selectedSuggestionsVar = suggestion;
         if (options.clickAction) {
-          clickAction();
+          clickAction(suggestion);
         }
       });
 

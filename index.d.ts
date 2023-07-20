@@ -1,8 +1,8 @@
 declare module "effortless-complete" {
   export interface autoCompleteOptions {
-    suggestionContainer: HTMLDivElement;
+    suggestionContainer: HTMLElement | null;
     data: string[];
-    inputElement: HTMLInputElement;
+    inputElement: HTMLElement | null;
     clickAction?: (selectedSuggestion: string) => void;
     filtering: string;
   }
@@ -16,10 +16,10 @@ declare module "effortless-complete" {
 
   export interface autoCompleteHrefOptions {
     data: links[];
-    inputElement: HTMLInputElement;
+    inputElement: HTMLElement | null;
     clickAction?: (selectedSuggestion: string) => void;
     filtering: string;
-    suggestionContainer: HTMLDivElement;
+    suggestionContainer: HTMLElement | null;
   }
 
   export function autoCompleteHref(
