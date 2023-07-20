@@ -1,6 +1,6 @@
 {
   "name": "effortless-complete",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Input autocompletion made simple",
   "main": "index.js",
   "type": "module",
@@ -20,7 +20,8 @@
     "Effortless"
   ],
   "files": [
-    "dist"
+    "index.js",
+    "index.d.ts"
   ],
   "author": "Adam Simon",
   "license": "MIT",
