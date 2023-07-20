@@ -10,10 +10,18 @@ export function autoComplete(options) {
         const inputText = inputElement.value;
         let filteredSuggestion;
         if (filtering == "starts") {
-            filteredSuggestion = array.filter((item) => item.toLowerCase().startsWith(inputText));
+            filteredSuggestion = array.filter((item) => item
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .startsWith(inputText));
         }
         else if (filtering == "all") {
-            filteredSuggestion = array.filter((item) => item.toLowerCase().includes(inputText));
+            filteredSuggestion = array.filter((item) => item
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .includes(inputText));
         }
         filteredSuggestion.forEach((suggestion) => {
             const suggestionDiv = document.createElement("div");
@@ -46,10 +54,18 @@ export function autoCompleteHref(options) {
         const inputText = inputElement.value;
         let filteredSuggestion;
         if (filtering == "starts") {
-            filteredSuggestion = items.filter((item) => item.toLowerCase().startsWith(inputText));
+            filteredSuggestion = items.filter((item) => item
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .startsWith(inputText));
         }
         else if (filtering == "all") {
-            filteredSuggestion = items.filter((item) => item.toLowerCase().includes(inputText));
+            filteredSuggestion = items.filter((item) => item
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .includes(inputText));
         }
         let count = 0;
         filteredSuggestion.forEach((suggestion) => {

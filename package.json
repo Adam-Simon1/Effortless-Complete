@@ -1,6 +1,6 @@
 {
   "name": "effortless-complete",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Input autocompletion made simple",
   "main": "index.js",
   "type": "module",

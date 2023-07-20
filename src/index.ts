@@ -22,11 +22,19 @@ export function autoComplete(options: Options1): HTMLElement {
     let filteredSuggestion: string[];
     if (filtering == "starts") {
       filteredSuggestion = array.filter((item) =>
-        item.toLowerCase().startsWith(inputText)
+        item
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .startsWith(inputText)
       );
     } else if (filtering == "all") {
       filteredSuggestion = array.filter((item) =>
-        item.toLowerCase().includes(inputText)
+        item
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(inputText)
       );
     }
 
@@ -83,11 +91,19 @@ export function autoCompleteHref(options: Options2): HTMLElement {
     let filteredSuggestion: string[];
     if (filtering == "starts") {
       filteredSuggestion = items.filter((item) =>
-        item.toLowerCase().startsWith(inputText)
+        item
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .startsWith(inputText)
       );
     } else if (filtering == "all") {
       filteredSuggestion = items.filter((item) =>
-        item.toLowerCase().includes(inputText)
+        item
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(inputText)
       );
     }
 
