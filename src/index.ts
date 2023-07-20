@@ -9,7 +9,7 @@ interface Options1 {
   selectedSuggestionsVar: string;
 }
 
-function autoComplete(options: Options1): HTMLElement {
+export function autoComplete(options: Options1): HTMLElement {
   const array = options.data;
   const inputElement = options.inputElement;
   const clickAction = options.clickAction;
@@ -68,7 +68,7 @@ interface Options2 {
   selectedSuggestionsVar: string;
 }
 
-function autoCompleteHref(options: Options2): HTMLElement {
+export function autoCompleteHref(options: Options2): HTMLElement {
   const data = options.data;
   const inputElement = options.inputElement;
   const clickAction = options.clickAction;
@@ -118,8 +118,3 @@ function autoCompleteHref(options: Options2): HTMLElement {
 
   return suggestionContainer;
 }
-
-module.exports = {
-  autoComplete,
-  autoCompleteHref,
-};

@@ -1,5 +1,5 @@
 // Need: let selectedSuggestions: string;
-function autoComplete(options) {
+export function autoComplete(options) {
     const array = options.data;
     const inputElement = options.inputElement;
     const clickAction = options.clickAction;
@@ -33,7 +33,7 @@ function autoComplete(options) {
     });
     return suggestionContainer;
 }
-function autoCompleteHref(options) {
+export function autoCompleteHref(options) {
     const data = options.data;
     const inputElement = options.inputElement;
     const clickAction = options.clickAction;
@@ -74,9 +74,4 @@ function autoCompleteHref(options) {
     });
     return suggestionContainer;
 }
-module.exports = {
-    autoComplete,
-    autoCompleteHref,
-};
-export {};
 //# sourceMappingURL=index.js.map
