@@ -28,9 +28,8 @@ export function autoComplete(options) {
             suggestionDiv.classList.add("suggestionElement");
             suggestionDiv.textContent = suggestion;
             suggestionDiv.addEventListener("click", () => {
-                options.selectedSuggestionsVar = suggestion;
                 if (options.clickAction) {
-                    clickAction();
+                    clickAction(suggestion);
                 }
             });
             suggestionContainer.appendChild(suggestionDiv);
@@ -76,9 +75,8 @@ export function autoCompleteHref(options) {
             suggestionA.href = urls[count];
             count++;
             suggestionDiv.addEventListener("click", () => {
-                options.selectedSuggestionsVar = suggestion;
                 if (options.clickAction) {
-                    clickAction();
+                    clickAction(suggestion);
                 }
             });
             suggestionContainer.appendChild(suggestionDiv);
